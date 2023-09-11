@@ -1,0 +1,87 @@
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <div class="img-container">
+      <div class="login-section ion-padding">
+       <div class="login-position">
+        <div class="heading ion-padding">
+          <h1>Bienvenido</h1>
+          <p>Inicia Sesión</p>
+        </div>
+        <div class="login-form ion-padding">
+          <!-- INPUT USER -->
+          <div class="form-input">
+            <ion-icon name="person-outline"></ion-icon>
+            <ion-item>
+              <ion-input
+                label="Usuario"
+                labelPlacement="stacked"
+                type="text"
+                name="username"
+                id="username"
+                class="form-control"
+                placeholder="Escribe tu usuario"
+                [(ngModel)]="username"
+                pattern="{{ usernamePattern }}"
+                maxlength="8"
+                required
+              ></ion-input>
+            </ion-item>
+            <ion-text
+              *ngIf="username && !username.match(usernamePattern)"
+              class="text-danger"
+            >
+              El usuario debe ser alfanumérico con mínimo 3 caracteres y máximo 8.
+            </ion-text>
+          </div>
+
+          <!-- INPUT PASSWORD -->
+          <div class="form-input">
+            <ion-icon name="lock-closed-outline"></ion-icon>
+            <ion-item>
+              <ion-input
+                label="Contraseña"
+                labelPlacement="stacked"
+                type="password"
+                name="password1"
+                id="password1"
+                class="form-control"
+                placeholder="Escribe tu contraseña"
+                [(ngModel)]="password"
+                pattern="{{ passwordPattern }}"
+                maxlength="4"
+                required
+              ></ion-input>
+            </ion-item>
+            <ion-text
+              *ngIf="password && !password.match(passwordPattern)"
+              class="text-danger"
+            >
+              La contraseña debe ser numérica de 4 dígitos.
+            </ion-text>
+          </div>
+
+          <div class="action-button ion-padding">
+            <ion-button
+              size="large"
+              class="login-button"
+              fill="outline"
+              (click)="login()"
+            >
+              INGRESAR
+            </ion-button>
+            <p routerLink="/olvido">¿Olvidaste la contraseña?</p>
+            <ion-button
+              class="signup-button"
+              size="large"
+              fill="outline"
+              routerLink="/register"
+            >
+              REGISTRATE
+            </ion-button>
+          </div>
+        </div>
+       </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

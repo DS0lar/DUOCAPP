@@ -1,0 +1,31 @@
+<ion-header [translucent]="true" color="succes">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button routerLink="/login" fill="clear" class="fs-3"><</ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-icon name="power" class="me-3" routerLink="/home"></ion-icon>
+    </ion-buttons>
+    <ion-title class="">DUOC ASISTENCIAS</ion-title>
+  </ion-toolbar>
+</ion-header> 
+<ion-content>
+  
+<div class="container" id="Prueba">
+
+  <h3 id="custom"> Bienvenido</h3>
+  <h1></h1>
+  <p>Si deseas registrar tu asistencia solo debes de escanear el código QR de tu profesor</p>
+  <div class="container">
+    <!--SCANNEAR-->
+    <h2></h2>
+    <ion-button expand="full" color="success" (click)="LeerCode()">Escanear Código</ion-button>
+    
+    <div *ngIf="datoscaneado">
+        <p>
+            Contenido obtenido: <b>{{ datoscaneado["text"] }}</b>
+        </p>
+    </div>
+  </div>
+</div>
+</ion-content>

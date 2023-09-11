@@ -1,0 +1,8 @@
+{
+  "name": "DuocAsist",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

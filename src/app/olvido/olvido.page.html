@@ -1,0 +1,57 @@
+<ion-content class="img-container">
+  <div class="login-section ion-padding">
+    <div class="heading ion-padding">
+      <h1>Recupera tu contraseña</h1>
+      <p>Escribe la nueva contraseña</p>
+    </div>
+    <div class="login-form ion-padding">
+
+      <!-- INPUT USER -->
+      <div class="form-input">
+        <ion-icon name="person-outline" ></ion-icon>
+        <ion-item>
+          <ion-input label="Usuario" labelPlacement="stacked"
+            [(ngModel)]="username"
+            name="username1"
+            type="text"
+            placeholder="Escribe tu usuario"
+            id="username"
+            class="form-control"    
+            pattern="{{ usernamePattern }}"
+            maxlength="8"
+            required
+            >
+          </ion-input>  
+        </ion-item>
+      </div>
+
+      <!-- INPUT PASSWORD -->
+      <div class="form-input">
+        <ion-icon name="lock-closed-outline"></ion-icon>
+        <ion-item>
+          <ion-input label="Nueva Contraseña" labelPlacement="stacked"
+            [(ngModel)]="newPassword"
+            name="newPassword"
+            placeholder="Escribe tu nueva contraseña"
+            type="password"
+            id="newPassword"
+            class="form-control"
+            pattern="{{ passwordPattern }}"
+            maxlength="4"
+            required>
+          </ion-input> 
+        </ion-item>
+      </div>
+
+      <div class="action-button ion-padding">
+        <ion-button size="large" class="login-button" fill="outline" (click)="recoverPassword()">
+          RECUPERAR
+        </ion-button>
+
+        <ion-button class="signup-button" size="large" fill="outline" routerLink="/login">
+          VOLVER
+        </ion-button>
+      </div>
+    </div>
+  </div>
+</ion-content>
